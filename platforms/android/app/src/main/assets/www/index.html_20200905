@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Tell the browser to be responsive to screen width -->
+	<meta http-equiv="Content-Security-Policy" 
+    content="default-src * 'self' 'unsafe-inline' data: gap: 'unsafe-eval';
+    style-src * 'self' 'unsafe-inline'; 
+    connect-src * ; 
+    script-src * 'self' 'unsafe-inline'; 
+    media-src *">
+	
+	<meta name="format-detection" content="telephone=no">
+	<meta name="msapplication-tap-highlight" content="no">
+	<meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
+
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon.png">
+    <title>Su Life</title>
+    
+    <!-- page css -->
+    <link href="dist/css/pages/login-register-lock.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="dist/css/style.css" rel="stylesheet">
+
+    <!-- adicionado para ver se aparecem os icones no app -->
+	<link href="assets/icons/font-awesome/css/font-awesome.css" rel="stylesheet">
+    <link href="assets/icons/themify-icons/themify-icons.css" rel="stylesheet">
+    
+    
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+<style>
+  .form-control::placeholder {
+    /*color: #6c757d;*/
+    color: white;
+  }
+.text-primary {
+    color: white !important;
+}  
+  
+</style>
+
+
+
+</head>
+
+<body style='height:100vh;background-color:#61233C'>
+    <!-- ============================================================== -->
+    <!-- Preloader - style you can find in spinners.css -->
+    <!-- ============================================================== -->
+    <div class="preloader">
+        <div class="loader">
+            <div class="loader__figure"></div>
+            <p class="loader__label">Su Life</p>
+        </div>
+    </div>
+    <!-- ============================================================== -->
+    <!-- Main wrapper - style you can find in pages.scss -->
+    <!-- ============================================================== -->
+    <section id="wrapper" class="login-register login-sidebar " style="height:100vh;background-image: url('img/9349763736532963fa4a51c23f2087ee.jpg')" >
+        <!--<div class="login-box card" >
+            <div class="card-body"  >-->
+                    <img src='assets/images/logo.png' width='120px' style='margin-top:10px;margin-left:10px'>
+<div class="row h-100">
+   <div class="col-sm-12 my-auto">
+                <form class="form-horizontal form-material" id="loginform" action="login.html" style="margin: -70px 20px 20px 20px"' >
+                    <!--<a href="javascript:void(0)" class="text-center db"><img src="assets/images/logo-icon.png" alt="Home" /><br/><img src="assets/images/logo-text.png" alt="Home" /></a>-->
+                    <!--<img src='img/logo.png' width='60px' >-->
+					<div id='deviceProperties'></div>
+					
+					<div class="form-group m-t-40">
+                        <div class="col-xs-12">
+                            <input class="form-control" name='edtuser' id='edtuser' style='color:white;font-size:1.2em;' type="text" required="" value="" placeholder="Username">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-xs-12">
+                            <input class="form-control" name='edtpassword' id='edtpassword' style='color:white;font-size:1.2em' type="password" value="" required="" placeholder="Password">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-md-12">
+                            <div class="custom-control custom-checkbox">
+                                <!--<input type="checkbox" class="custom-control-input" id="customCheck2">
+                                <label class="custom-control-label" for="customCheck2">Remember me</label>-->
+                                <a href="javascript:void(0)" id="to-recover" class="text-dark pull-right"><i class="fa fa-lock m-r-5"></i> Forgot pwd?</a> 
+                            </div>     
+                        </div>
+                    </div>
+                    <div class="form-group text-center m-t-20">
+                        <div class="col-xs-12">
+                            <button id='btnenviar' class="btn btn-info btn-lg btn-block text-uppercase btn-rounded" style='border-width:0px;background-color:#61233C;' type="button">Log In</button>
+                        </div>
+                    </div>
+                    <div class="form-group m-b-0">
+                        <div class="col-sm-12 text-center text-primary" >
+                            Don't have an account? <a href="javascript:void(0)" id="to-singup" class="text-defaul m-l-5"><b>Sign Up</b></a>
+                        </div>
+                    </div>
+                </form>
+
+				
+				
+                <form class="form-horizontal form-material" id="recoverform" action="index.html" style="margin: -40px 20px 20px 20px">
+                    <div class="form-group ">
+                        <div class="col-xs-12">
+                            <h3 class='text-primary'>Recover Password</h3>
+                            <p class="text-muted text-primary" >Enter your student number and instructions will be sent to your student email account</p>
+                        </div>
+                    </div>
+                    <div class="form-group ">
+                        <div class="col-xs-12">
+                            <input class="form-control" style='color:white' name='edtreenviarsenha'  style='color:white;font-size:1.2em' id='edtreenviarsenha' type="text" required="" placeholder="Student Number">
+                        </div>
+                    </div>
+                    <div class="form-group text-center m-t-20">
+                        <div class="col-xs-12">
+                            <button id='btnenviarsenha' class="btn btn-primary btn-lg btn-block text-uppercase waves-effect waves-light" style='border-width:0px;background-color:#61233C;' type="button">Reset</button>
+                        </div>
+                    </div>
+					
+                    <div class="form-group m-b-0">
+                        <div class="col-sm-12 text-center">
+                            <p class="text-primary" >Already have an account? <a href="javascript:void(0)" id='to-login2' class="text-default m-l-5" ><b >Sign In</b></a></p>
+                        </div>
+                    </div>
+					
+					
+                </form>
+		   </div>
+</div>		
+            <!--</div>
+        </div>-->
+    </section>
+	
+	<section id="wrapper2" class="login-register login-sidebar" style='height:100vh'>
+        <div class="login-box card" style='background-color:#61233C'>
+            <div class="card-body">
+                <form class="form-horizontal form-material" id="registerform" action="index.php" style='color: white'>
+                    <!--<a href="javascript:void(0)" class="text-center db"><img src="../assets/images/logo-icon.png" alt="Home" /><br/><img src="../assets/images/logo-text.png" alt="Home" /></a>-->
+                    
+					<h3 class="box-title m-t-40 m-b-0" style='color: white'>Register Now</h3><small style='color: white'>Create your account and enjoy</small>
+                    <div class="form-group m-t-20" >
+                        <div class="col-xs-12">
+                            <input class="form-control" style='color: white' name='edtname=' id='edtname' type="text" required="" placeholder="Name">
+                        </div>
+                    </div>
+                    <div class="form-group " >
+                        <div class="col-xs-12">
+                            <input class="form-control" style='color: white' name='edtsurname' id='edtsurname' type="text" required="" placeholder="Surname">
+                        </div>
+                    </div>
+                    <div class="form-group " >
+                        <div class="col-xs-12">
+                            <input class="form-control" style='color: white' name='edtstudentnumber' id='edtstudentnumber' type="text" required="" placeholder="Student Number">
+                        </div>
+                    </div>
+                    <div class="form-group ">
+                        <div class="col-xs-12">
+                            <input class="form-control" style='color: white' name='edtphonenumber' id='edtphonenumber' type="text" required="" placeholder="Phone Number">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-xs-12">
+                            <div id="div_residence"><input class="form-control" style='color: white' name='cmboxresidence' id='cmboxresidence' type="text" required="" placeholder="Residence"></div>
+                        </div>
+                    </div>
+
+                    <div class="form-group ">
+                        <div class="col-xs-12">
+                            <input class="form-control" style='color: white' name='edtpassword2' id='edtpassword2' type="password" required="" placeholder="Password">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-xs-12">
+                            <input class="form-control" style='color: white' name='edtconfirmpassword' id='edtconfirmpassword' type="password" required="" placeholder="Confirm Password">
+                        </div>
+                    </div>
+
+                    <div class="form-group row" >
+                        <div class="col-md-12">
+                            <div class="custom-control custom-checkbox">
+                                <input id="chboxAgree" name='chboxAgree' type="checkbox" class="custom-control-input" value='S' >
+                                <label class="custom-control-label" for="chboxAgree">I agree to all <a onclick='abreTermo()' class="text-info">Terms</a></label> 
+                            </div> 
+                        </div>
+                    </div>
+                    <div class="form-group text-center m-t-20">
+                        <div class="col-xs-12">
+                            <button id='btnregister' class="btn btn-info btn-lg btn-block text-uppercase waves-effect waves-light" type="button">Register</button>
+                        </div>
+                    </div>
+                    <div class="form-group m-b-0">
+                        <div class="col-sm-12 text-center">
+                            <p>Already have an account? <a href="javascript:void(0)" id='to-login' class="text-info m-l-5"><b>Sign In</b></a></p>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>	
+	<!--<div id="deviceready" class="blink">
+                <p class="event listening">Connecting to Device</p>
+                <p class="event received">Device is Ready</p>
+    </div>
+	-->
+<!--	<div class="app">
+					<div id="deviceready" class="blink">
+						<p class="event listening">Conectando</p>
+						<p class="event received">Pronto para o uso</p>
+					</div>
+	</div>
+-->
+    <!-- ============================================================== -->
+    <!-- End Wrapper -->
+    <!-- ============================================================== -->
+    <!-- ============================================================== -->
+    <!-- All Jquery -->
+    <!-- ============================================================== -->
+    <script src="assets/node_modules/jquery/jquery-3.2.1.min.js"></script>
+    <!-- Bootstrap tether Core JavaScript -->
+    <script src="assets/node_modules/popper/popper.min.js"></script>
+    <script src="assets/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!--Custom JavaScript -->
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+    <script type="text/javascript">
+	
+		var UUID = '';
+	
+        function alertDismissed()
+		{
+		
+		}
+		
+		  $("#btnenviarsenha").click(function()
+		  {
+			if (
+					(document.getElementById('edtreenviarsenha').value!='') 
+				)
+			{
+				$.post("https://tempustecnologia.com/sulife/controller/exec.register.php",
+				{
+				  op: "REENVIARSENHA",
+				  edtreenviarsenha: document.getElementById('edtreenviarsenha').value
+				},
+				function(data,status){
+					if (data.trim()=='OK')
+					{
+						navigator.notification.alert(
+							'Message sent to registered email.',  // message
+							alertDismissed,         // callback
+							'Success',            // title
+							'OK'                  // buttonName
+						);				
+					}
+					else
+					{
+						navigator.notification.alert(
+							'Could not send email.',  // message
+							alertDismissed,         // callback
+							'Warning',            // title
+							'OK'                  // buttonName
+						);				
+					}
+				});
+			}
+			else
+			{
+				navigator.notification.alert(
+							'Check the fields.',  // message
+							alertDismissed,         // callback
+							'Warning',            // title
+							'OK'                  // buttonName
+				);	
+			
+			}
+			
+			
+		  });		
+		  
+		  $("#btnenviar").click(function(){
+		  
+			  if ((document.getElementById('edtuser').value!='') &&
+			  (document.getElementById('edtpassword').value!=''))
+			  {
+				executaLogin(document.getElementById('edtuser').value,document.getElementById('edtpassword').value,UUID,'MSG');
+			  }
+			  else
+			  {
+				navigator.notification.alert(
+							'Fill in the username and password fields.',  // message
+							alertDismissed,         // callback
+							'Warning',            // title
+							'OK'                  // buttonName
+				);	
+			  }
+			  
+		  });		  
+
+		  function executaLogin(usuario,senha,uuid,msg){
+				$.post("https://tempustecnologia.com/sulife/controller/exec.register.php",
+				{
+				  op: "LOGINAPP",
+				  edtuser: usuario,
+				  edtpassword: senha,
+				  UUID: uuid
+				},
+				function(data,status){
+					var res = data.split("|");
+					iduser = res[0];
+					name = res[1];
+					studentnumber = res[2];
+					idresidence = res[3];
+					surname = res[4];
+					phonenumber = res[5];
+					gender = res[6];
+					picture = res[7];
+				
+				
+					if (data.trim()!='ERRO')
+					{
+						
+						window.localStorage.setItem("iduser", iduser);
+						window.localStorage.setItem("name",name);
+						window.localStorage.setItem("studentnumber",studentnumber);
+						window.localStorage.setItem("idresidence",idresidence);
+						window.localStorage.setItem("surname",surname);
+						window.localStorage.setItem("phonenumber",phonenumber);
+						window.localStorage.setItem("gender",gender);
+						window.localStorage.setItem("picture",picture);
+						window.location.href = 'index2.html';
+						resp = true;
+					}
+					else
+					{
+						if (msg=='MSG')
+						{
+							navigator.notification.alert(
+									'Could not log in.',  // message
+									alertDismissed,         // callback
+									'Warning',            // title
+									'OK'                  // buttonName
+							);
+						}
+						resp = false;
+					}
+					return resp;
+				
+				});
+				
+		  }
+		  
+		  
+		   $("#btnregister").click(function(){
+			if (
+					(document.getElementById('edtname').value!='') &&
+					(document.getElementById('edtsurname').value!='') &&
+					(document.getElementById('edtstudentnumber').value!='') &&
+					(document.getElementById('edtphonenumber').value!='') &&
+					(document.getElementById('cmboxresidence').value!='') &&
+					(document.getElementById('edtpassword2').value!='') &&
+					(document.getElementById('chboxAgree').checked==true) &&
+					(
+						(document.getElementById('edtpassword2').value==document.getElementById('edtconfirmpassword').value)
+					)
+				)
+			{
+				$.post("https://tempustecnologia.com/sulife/controller/exec.register.php",
+				{
+				  op: "IAPP",
+				  edtname: document.getElementById('edtname').value,
+				  edtsurname: document.getElementById('edtsurname').value,
+				  edtstudentnumber: document.getElementById('edtstudentnumber').value,
+				  edtphonenumber: document.getElementById('edtphonenumber').value,
+				  cmboxresidence: document.getElementById('cmboxresidence').value,
+				  edtpassword: document.getElementById('edtpassword2').value,
+				  edtconfirmpassword: document.getElementById('edtconfirmpassword').value,
+				  chboxagree: document.getElementById('chboxAgree').value 
+				},
+				function(data,status){
+					if (data.trim()=='OK')
+					{
+						navigator.notification.alert(
+							'Registered successfully.',  // message
+							alertDismissed,         // callback
+							'Success',            // title
+							'OK'                  // buttonName
+						);	
+						$("#wrapper2").slideUp();
+						$("#wrapper").fadeIn();
+					}
+					else
+					{
+						navigator.notification.alert(
+							'Unable to register.',  // message
+							alertDismissed,         // callback
+							'Error',            // title
+							'OK'                  // buttonName
+						);	
+					}
+				});
+			}
+			else
+			{
+				navigator.notification.alert(
+							'Check the fields. All fields are mandatory',  // message
+							alertDismissed,         // callback
+							'Warning',            // title
+							'OK'                  // buttonName
+						);	
+			
+			}
+			
+		  });
+
+		  
+		$(document).ready(function(){
+		
+		   // $("#loginform").slideUp(); // login 
+            $("#recoverform").hide(); // recuperar senha
+            $("#wrapper2").hide();
+			$("#wrapper").show(); // registro
+			$("#loginform").show(); 
+			
+			document.addEventListener("deviceready", onDeviceReady, false);
+
+			function onDeviceReady() {
+			
+				//document.getElementById('checkUUID').value=='F')
+				UUID =  device.uuid;
+				
+				//var element = document.getElementById('deviceProperties');
+				
+				/*element.innerHTML = 'Device Model: '    + device.model    + '<br />' +
+									'Device Cordova: '  + device.cordova  + '<br />' +
+									'Device Platform: ' + device.platform + '<br />' +
+									'Device UUID: '     + device.uuid     + '<br />' +
+									'Device Version: '  + device.version  + '<br />';
+				*/					
+				if (executaLogin('','',UUID,''))
+				{
+					document.getElementById('loginform').submit();
+				}
+				
+			}
+
+			
+			
+		});
+		
+        $(function() {
+            $(".preloader").fadeOut();
+        });
+        $(function() {
+            $('[data-toggle="tooltip"]').tooltip()
+        });
+        // ============================================================== 
+        // Login and Recover Password 
+        // ============================================================== 
+        $('#to-recover').on("click", function() {
+            $("#loginform").slideUp();
+            $("#recoverform").fadeIn();
+        });
+		
+		$('#to-singup').on("click", function() {
+            $("#wrapper").slideUp();
+            $("#wrapper2").fadeIn();
+			$.post("https://tempustecnologia.com/sulife/controller/exec.residence.php",
+			{
+			  op: "LISTAPP",
+			  idresidence: document.getElementById('cmboxresidence').value
+			},
+			function(data,status){
+				$("#div_residence").html(data); 
+			});				  
+
+			
+        });
+
+		$('#to-login').on("click", function() {
+            $("#wrapper2").slideUp();
+            $("#wrapper").fadeIn();
+        });
+		
+		 $('#to-login2').on("click", function() {
+            $("#recoverform").slideUp();
+            $("#loginform").fadeIn();
+        });
+		
+	</script>
+    
+</body>
+
+</html>
